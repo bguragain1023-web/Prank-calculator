@@ -1,0 +1,159 @@
+:root {
+  --bg-wrapper: linear-gradient(yellow, green);
+  --bg-calculator: rgb(163, 163, 163);
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --bthclr: lightgreen;
+}
+
+body {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+.arbutus-regular {
+  font-family: "Arbutus", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  background: var(--bg-wrapper);
+  height: 100vh;
+}
+
+.calculator {
+  width: 400px;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  background-color: var(--bg-calculator);
+  /* box-shadow: var(--box-shadow); */
+
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "top top top top"
+    "ac c per divide"
+    "seven eight nine multi"
+    "four five six minus"
+    "one two three plus"
+    "zero dot equal equal";
+
+  transform: perspective(70rem) rotateX(30deg);
+
+  animation: ani 1s linear infinite;
+}
+
+.display {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: end;
+  background: lightgreen;
+  box-shadow: var(--box-shadow);
+  grid-area: top;
+}
+
+.calculator .btn {
+  height: 50px;
+  background: yellow;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator .btn:hover {
+  cursor: pointer;
+  background: var(--bthclr);
+  transition: all 0.3s;
+}
+
+.btn-ac {
+  grid-area: ac;
+}
+.btn-c {
+  grid-area: c;
+}
+.btn-per {
+  grid-area: per;
+}
+.btn-divide {
+  grid-area: divide;
+}
+.btn-7 {
+  grid-area: seven;
+}
+.btn-8 {
+  grid-area: eight;
+}
+.btn-9 {
+  grid-area: nine;
+}
+.btn-x {
+  grid-area: multi;
+}
+.btn-4 {
+  grid-area: four;
+}
+
+.btn-5 {
+  grid-area: five;
+}
+.btn-6 {
+  grid-area: six;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-1 {
+  grid-area: one;
+}
+.btn-2 {
+  grid-area: two;
+}
+.btn-3 {
+  grid-area: three;
+}
+.btn-plus {
+  grid-area: plus;
+}
+.btn-0 {
+  grid-area: zero;
+}
+.btn-dot {
+  grid-area: dot;
+}
+.btn-equal {
+  grid-area: equal;
+}
+
+.prank {
+  background: red;
+  color: white;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(10px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
