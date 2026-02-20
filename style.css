@@ -49,7 +49,7 @@ body {
 
   transform: perspective(70rem) rotateX(30deg);
 
-  animation: ani 1s linear infinite;
+  animation: moving 1s linear;
 }
 
 .display {
@@ -155,5 +155,15 @@ body {
 
   100% {
     transform: translateX(-10px);
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: perspective(15rem) rotateX(30deg);
+  }
+
+  100% {
+    transform: perspective(70rem) rotateX(30deg);
   }
 }

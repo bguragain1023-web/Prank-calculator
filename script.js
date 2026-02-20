@@ -13,7 +13,7 @@ const buttonAction = (value) => {
     return display(strDisplay);
   }
 
-  if (value === "=") {
+  if (value === "=" || value === "Enter") {
     //get the last character of the string
     lastOperator = "";
     const lastchar = strDisplay[strDisplay.length - 1];
@@ -59,10 +59,10 @@ allButtonsElm.forEach((btn) => {
   btn.addEventListener("mousedown", () => {
     btn.style.scale = ".9";
   });
+
   btn.addEventListener("click", () => {
     btn.style.scale = "1";
     const value = btn.innerText;
-
     buttonAction(value);
   });
 });
@@ -87,3 +87,13 @@ const randValue = () => {
   const num = Math.round(Math.random() * 10);
   return num < 3 ? num : 0;
 };
+
+// Binding keyword
+
+document.addEventListener("keypress", (e) => {
+  const value = e.key;
+  if (e.code.includes("Key")) {
+    return;
+  }
+  buttonAction(value);
+});
