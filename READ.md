@@ -10,7 +10,7 @@
 8. make the C button work
 9. Ignore the last operator and show the result
 10. prevent multiple operators to press
-11. allow only one "." per number set
+11. allow only one . per number set
 12. make it a prank by adding a random value
 13. add prank animation
 14. add button click effect
